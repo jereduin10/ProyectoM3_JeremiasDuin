@@ -1,0 +1,20 @@
+{
+  "name": "proyectom2_jeremiasduin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "serve . -s"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1"
+  },
+  "devDependencies": {
+    "serve": "^14.2.6",
+    "vitest": "^5.0.1"
+  }
+}
