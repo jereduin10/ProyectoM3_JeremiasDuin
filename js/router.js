@@ -1,3 +1,6 @@
+import { initChat } from "./chat.js";
+
+
 const routes = {
  "/home": `
   <section class="home">
@@ -42,12 +45,7 @@ const routes = {
       </div>
     </div>
 
-    <div id="chat-messages" class="chat-messages">
-      <div class="message character-message">
-        <strong>Homero:</strong>
-        <p>¡Hola! ¿Qué querés?</p>
-      </div>
-    </div>
+    <div id="chat-messages" class="chat-messages"></div>
 
     <form id="chat-form" class="chat-form">
       <input
@@ -75,6 +73,10 @@ export function router() {
   const view = routes[path] || routes["/home"];
 
   document.querySelector("#app").innerHTML = view;
+
+  if (path === "/chat") {
+  initChat();
+}
 }
 
 export function navigate(event) {
