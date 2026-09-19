@@ -168,6 +168,36 @@ nav a {
   }
 }
 
+.about-page {
+  padding: 40px 20px;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-content h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.about-content p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.about-content ul {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+
 @media (min-width: 1024px) {
   .home {
     padding: 50px;

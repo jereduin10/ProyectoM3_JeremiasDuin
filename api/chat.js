@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-async function consultarGemini(message) {
+async function consultarGemini(message, history) {
   const model = genAI.getGenerativeModel({
     model: "gemini-3.6-flash"
   });
@@ -17,8 +17,13 @@ async function consultarGemini(message) {
     - Hablás de forma sencilla y divertida.
     - Tus respuestas deben ser breves, máximo 2 o 3 frases.
 
-    Usuario:
-    ${message}
+    Historial de conversación:
+${history
+  .map(({ autor, texto }) => `${autor}: ${texto}`)
+  .join("\n")}
+
+Usuario:
+${message}
   `);
 
   return result.response.text();
@@ -32,7 +37,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { message } = req.body;
+    const { message, history = [] } = req.body;
 
     if (!message || message.trim() === "") {
       return res.status(400).json({
@@ -41,7 +46,7 @@ export default async function handler(req, res) {
     }
 
     try {
-      const response = await consultarGemini(message);
+      const response = await consultarGemini(message, history);
 
       return res.status(200).json({
         response
@@ -50,11 +55,10 @@ export default async function handler(req, res) {
     } catch (error) {
 
       if (error.status === 429 || error.status === 503) {
-        console.log("Gemini temporalmente ocupado. Reintentando...");
 
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        const response = await consultarGemini(message);
+        const response = await consultarGemini(message, history);
 
         return res.status(200).json({
           response
