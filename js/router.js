@@ -120,10 +120,10 @@ export function router() {
 }
 }
 
-export function navigate(event) {
+export function navigate(event, link) {
   event.preventDefault();
 
-  const url = event.currentTarget.href;
+  const url = link.href;
 
   history.pushState({}, "", url);
 

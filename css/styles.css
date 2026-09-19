@@ -4,15 +4,25 @@
   padding: 0;
 }
 
+:root {
+  --amarillo-simpson: #f5d90a;
+  --azul-simpson: #2d9cdb;
+  --azul-oscuro: #1d3557;
+  --verde-simpson: #7ac943;
+  --negro: #222;
+  --blanco: #fff;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background: #f5d900;
+  background: #f5d90a;
   color: #222;
 }
 
 header {
-  padding: 20px;
-  background: #222;
+  padding: 18px 20px;
+  background: var(--azul-simpson);
+  border-bottom: 5px solid var(--negro);
 }
 
 nav {
@@ -22,9 +32,17 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: var(--blanco);
   text-decoration: none;
   font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: var(--amarillo-simpson);
+  color: var(--negro);
 }
 
 .home {
@@ -32,6 +50,7 @@ nav a {
   display: flex;
   align-items: center;
   padding: 30px 20px;
+  background: var(--amarillo-simpson);
 }
 
 .home-content {
@@ -48,6 +67,7 @@ nav a {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .chat-header {
@@ -55,8 +75,9 @@ nav a {
   align-items: center;
   gap: 15px;
   padding: 15px 20px;
-  background: #222;
-  color: white;
+  background: var(--azul-simpson);
+  color: var(--blanco);
+  border-bottom: 4px solid var(--negro);
 }
 
 .chat-header img {
@@ -77,6 +98,7 @@ nav a {
   flex: 1;
   overflow-y: auto;
   padding: 20px;
+  background: var(--amarillo-simpson);
 }
 
 .message {
@@ -87,15 +109,31 @@ nav a {
 }
 
 .character-message {
-  background: white;
+  background: var(--blanco);
   margin-right: auto;
+  border: 3px solid var(--negro);
+  border-radius: 15px 15px 15px 3px;
+}
+
+#typing {
+  opacity: 0.7;
+  font-style: italic;
+}
+
+.user-message {
+  background: var(--azul-simpson);
+  color: var(--blanco);
+  margin-left: auto;
+  border: 3px solid var(--negro);
+  border-radius: 15px 15px 3px 15px;
 }
 
 .chat-form {
   display: flex;
   gap: 10px;
   padding: 15px;
-  background: white;
+  background: var(--blanco);
+  border-top: 4px solid var(--negro);
 }
 
 .chat-form input {
@@ -117,17 +155,27 @@ nav a {
 .character-image img {
   width: 220px;
   max-width: 80%;
+  filter: drop-shadow(8px 8px 0 var(--negro));
 }
 
 .badge {
   display: inline-block;
+  margin-top: 20px;
   margin-bottom: 15px;
+  padding: 6px 12px;
+  background: var(--verde-simpson);
+  color: var(--negro);
+  border: 2px solid var(--negro);
+  border-radius: 20px;
   font-size: 12px;
   font-weight: bold;
+  box-shadow: 3px 3px 0 var(--negro);
 }
 
 .home-info h1 {
   font-size: 3rem;
+  color: var(--negro);
+  text-shadow: 3px 3px 0 var(--blanco);
 }
 
 .home-info h2 {
@@ -143,11 +191,19 @@ nav a {
 .btn-chat {
   display: inline-block;
   padding: 14px 24px;
-  background: #222;
-  color: white;
+  background: var(--azul-simpson);
+  color: var(--blanco);
   text-decoration: none;
-  border-radius: 8px;
+  border: 3px solid var(--negro);
+  border-radius: 12px;
   font-weight: bold;
+  box-shadow: 5px 5px 0 var(--negro);
+  transition: 0.2s;
+}
+
+.btn-chat:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--negro);
 }
 
 @media (min-width: 768px) {
@@ -169,22 +225,33 @@ nav a {
 }
 
 .about-page {
+  min-height: calc(100vh - 70px);
   padding: 40px 20px;
+  background: var(--amarillo-simpson);
 }
 
 .about-content {
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  padding: 30px;
+  background: var(--blanco);
+  border: 4px solid var(--negro);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 var(--negro);
 }
 
 .about-content h1 {
   font-size: 3rem;
   margin-bottom: 20px;
+  text-shadow: 3px 3px 0 var(--amarillo-simpson);
+  overflow-wrap: break-word;
 }
 
 .about-content h2 {
   margin-top: 30px;
   margin-bottom: 10px;
+  color: var(--azul-oscuro);
 }
 
 .about-content p {
@@ -197,6 +264,16 @@ nav a {
   line-height: 1.8;
 }
 
+.about-content li::marker {
+  color: var(--azul-simpson);
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 @media (min-width: 1024px) {
   .home {
@@ -213,5 +290,23 @@ nav a {
 
   .home-info h2 {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-page {
+    padding: 25px 15px;
+  }
+
+  .about-content {
+    padding: 20px;
+  }
+
+  .about-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .home {
+    padding-top: 15px;
   }
 }

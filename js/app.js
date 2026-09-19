@@ -5,7 +5,7 @@ document.addEventListener("click", (event) => {
 
   if (!link) return;
 
-  navigate(event);
+  navigate(event, link);
 });
 
 window.addEventListener("popstate", router);
