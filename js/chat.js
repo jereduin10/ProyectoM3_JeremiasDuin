@@ -150,7 +150,7 @@ function cargarMensajes(container) {
   if (mensajes.length === 0) {
     mostrarMensaje(
       "Homero",
-      "¡Hola! ¿Qué querés?",
+      "¡D'oh! ¡Hola! Soy Homero Simpson. ¿Viniste a hablar de donas?",
       container
     );
   }
