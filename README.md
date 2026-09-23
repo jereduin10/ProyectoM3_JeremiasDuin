@@ -8,9 +8,23 @@ ComicSansCon permite conversar con **Homero Simpson** utilizando inteligencia ar
 
 🌐 [Ver aplicación online](https://proyecto-m3-jeremias-duin.vercel.app)
 
-## 📸 Capturas
+## 🤖 Uso de inteligencia artificial
 
-### Prompt
+Durante el desarrollo del proyecto utilicé herramientas de inteligencia artificial como apoyo para comprender conceptos, resolver problemas y tomar decisiones de implementación.
+
+Principalmente utilicé prompts orientados a:
+
+Planificar la estructura de la aplicación.
+Comprender e implementar el routing SPA.
+Integrar Gemini mediante una Serverless Function.
+Diseñar y ajustar el comportamiento del chat.
+Resolver errores durante el desarrollo.
+Crear y revisar tests con Vitest.
+Mejorar la interfaz responsive.
+
+La IA fue utilizada como herramienta de apoyo y orientación. Las decisiones finales sobre la estructura, implementación y funcionamiento del proyecto fueron revisadas y aplicadas durante el desarrollo.
+
+### Capturas
 
 Realicé un prompt con la descripción de las características del proyecto para cumplir con los objetivos, solicitando a ChatGPT que me vaya orientando y explicando paso por paso el código agregado.
 
