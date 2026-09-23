@@ -46,6 +46,8 @@ La aplicación permite:
 ```text
 ProyectoM3_JeremiasDuin/
 │
+├── .vercel/
+│
 ├── api/
 │   └── chat.js
 │
@@ -60,8 +62,15 @@ ProyectoM3_JeremiasDuin/
 │   ├── chat.js
 │   └── router.js
 │
-├── index.html
+├── screenshots/
+│   └── Prompt1.jpeg
+│
+├── node_modules/
+│
+├── .env
+├── .gitignore
 ├── chat.test.js
+├── index.html
 ├── package.json
 ├── package-lock.json
 └── README.md

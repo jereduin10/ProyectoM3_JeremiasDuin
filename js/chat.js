@@ -7,6 +7,22 @@ export function initChat() {
 
   let isLoading = false;
 
+function bloquearNavegacion(bloquear) {
+  const elementos = document.querySelectorAll("nav button, nav a");
+
+  elementos.forEach((elemento) => {
+    if (elemento.tagName === "BUTTON") {
+      elemento.disabled = bloquear;
+    }
+
+    if (elemento.tagName === "A") {
+      elemento.style.pointerEvents = bloquear ? "none" : "";
+    }
+
+    elemento.setAttribute("aria-disabled", bloquear);
+  });
+}
+
   if (!form || !input || !messages) return;
 
   cargarMensajes(messages);
@@ -24,6 +40,8 @@ export function initChat() {
 
     input.disabled = true;
     form.querySelector("button").disabled = true;
+
+    bloquearNavegacion(true);
 
     const history = obtenerHistorial();
 
@@ -90,6 +108,7 @@ messages.scrollTop = messages.scrollHeight;
 
       input.disabled = false;
       form.querySelector("button").disabled = false;
+      bloquearNavegacion(false);
 
       input.focus();
     }
