@@ -8,6 +8,14 @@ ComicSansCon permite conversar con **Homero Simpson** utilizando inteligencia ar
 
 🌐 [Ver aplicación online](https://proyecto-m3-jeremias-duin.vercel.app)
 
+## 📸 Capturas
+
+### Prompt
+
+Realicé un prompt con la descripción de las características del proyecto para cumplir con los objetivos, solicitando a ChatGPT que me vaya orientando y explicando paso por paso el código agregado.
+
+![Prompt de ComicSansCon](./screenshots/Prompt1.jpeg)
+
 ## 🧠 ¿Qué hace la aplicación?
 
 La aplicación permite:
